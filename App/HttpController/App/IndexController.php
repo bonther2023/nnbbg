@@ -86,7 +86,28 @@ class IndexController extends AuthController
                     $good = [];
                     break;
                 default:
-                    $good = [];
+                    $good = [
+                        ['title' => '亲身体验深圳漂亮爆乳','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/153ea2b9a685cee1a006c2b7a8191ed9.jpg'],
+                        ['title' => '假日带清纯巨乳女友到','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/cad3fabc15f954aa3f6bbaa94a085b5b.jpg'],
+                        ['title' => '嫩模龙泽美曦私下兼','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/095ac35ed5c3d36acbde21a812727609.jpg'],
+                        ['title' => '某银行经理和极品E奶情人','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a7bd8e1f98a7e6e6ef2c729b6a18d8dd.jpg'],
+                        ['title' => '桃色坏女友贪玩男友','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/e172ec9497d9ead7aa4a6b757919e542.jpg'],
+                        ['title' => '公子哥同老铁驱车迎接刚下','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a971ecf5aa6f5f9d2606fe00daff1423.jpg'],
+                        ['title' => '淫乱师生恋性感家教诱惑学','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a418d6f5d2adbf760a163912a2189126.jpg'],
+                        ['title' => '空姐太寂寞想拍小视','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/f0202f6d614dc4240b855bbd464cd6c6.jpg'],
+                        ['title' => '高顔值模特小騷逼被插出多','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/bbee1af23379b767a9caf17334105c25.jpg'],
+                        ['title' => '國模宇航員系列大胸女神李梓熙','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/747e469bc061b3b98e0d5200f6c32b69.jpg'],
+                        ['title' => '亲身体验深圳漂亮爆乳','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/153ea2b9a685cee1a006c2b7a8191ed9.jpg'],
+                        ['title' => '假日带清纯巨乳女友到','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/cad3fabc15f954aa3f6bbaa94a085b5b.jpg'],
+                        ['title' => '嫩模龙泽美曦私下兼','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/095ac35ed5c3d36acbde21a812727609.jpg'],
+                        ['title' => '某银行经理和极品E奶情人','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a7bd8e1f98a7e6e6ef2c729b6a18d8dd.jpg'],
+                        ['title' => '桃色坏女友贪玩男友','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/e172ec9497d9ead7aa4a6b757919e542.jpg'],
+                        ['title' => '公子哥同老铁驱车迎接刚下','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a971ecf5aa6f5f9d2606fe00daff1423.jpg'],
+                        ['title' => '淫乱师生恋性感家教诱惑学','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/a418d6f5d2adbf760a163912a2189126.jpg'],
+                        ['title' => '空姐太寂寞想拍小视','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/f0202f6d614dc4240b855bbd464cd6c6.jpg'],
+                        ['title' => '高顔值模特小騷逼被插出多','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/bbee1af23379b767a9caf17334105c25.jpg'],
+                        ['title' => '國模宇航員系列大胸女神李梓熙','link' => 'https://sycdn.comtucdncom.com/upload/vod/20210923-1/747e469bc061b3b98e0d5200f6c32b69.jpg'],
+                    ];
                     break;
             }
 

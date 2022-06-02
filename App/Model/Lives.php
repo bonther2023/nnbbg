@@ -54,9 +54,8 @@ class Lives extends Base
     //APP 列表
     public function app()
     {
-        return $this->field('id,name')
-            ->where('status', self::STATUS_3, '<')
-            ->order('status','desc')
+        return $this->order('RAND()')
+            ->limit(20)
             ->all();
     }
 

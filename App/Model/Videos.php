@@ -93,10 +93,7 @@ class Videos extends Base
     //APP 推荐
     public function good($limit = 10)
     {
-        return $this->field('id,title,thumb,cid,free,clarity,vtime,view,focus')
-            ->where('status', self::STATUS_2)
-            ->with(['category'])
-            ->order('free','DESC')
+        return $this->field('id,title,thumb,clarity,vtime,view,focus')
             ->order('RAND()')
             ->limit($limit)
             ->all();

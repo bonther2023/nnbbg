@@ -46,7 +46,7 @@ class VideoController extends AuthController
                     $good = $model->good(20);
                     break;
             }
-            return $this->writeJson(0, encrypt_data($good));
+            return $this->writeJson(0, encrypt_data($good),$uvip);
         } catch (\Throwable $e) {
             return $this->writeJson(1);
         }

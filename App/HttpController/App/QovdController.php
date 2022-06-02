@@ -5,19 +5,54 @@ namespace App\HttpController\App;
 use App\Model\AuthorFocus;
 use App\Model\Buys;
 use App\Model\Qovds;
+use App\Model\Videos;
 
 class QovdController extends AuthController
 {
 
     public function index(){
         try {
-            $param = $this->params();
-            $param['page'] = $param['page'] ?? 1;
-            $param['kwd'] = $param['kwd'] ?? '';
-            $param['status'] = $param['status'] ?? 0;
-            $model = Qovds::create();
-            $data = $model->app($param);
-            return $this->writeJson(0, encrypt_data($data));
+            //判断用户VIP等级，返回对应等级的数据
+            $uvip = 0;
+            $uvip++;
+            $model = Videos::create();
+            switch ($uvip){
+                case 1:
+                    //视频推荐20
+                    $good = $model->good(20);
+                    break;
+                case 2:
+                    //视频推荐20
+                    $good = $model->good(20);
+                    break;
+                case 3:
+                    $good = [];
+                    break;
+                case 4:
+                    $good = [];
+                    break;
+                case 5:
+                    $good = [];
+                    break;
+                case 6:
+                    $good = [];
+                    break;
+                case 7:
+                    $good = [];
+                    break;
+                case 8:
+                    $good = [];
+                    break;
+                case 9:
+                    $good = [];
+                    break;
+                default:
+                    //视频推荐20
+                    $good = $model->good(20);
+                    break;
+            }
+
+            return $this->writeJson(0, encrypt_data($good));
         } catch (\Throwable $e) {
             write_log('Qovd-index:');
             write_log($e->getMessage(), 4);

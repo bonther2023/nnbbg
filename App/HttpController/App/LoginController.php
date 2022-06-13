@@ -20,7 +20,7 @@ class LoginController extends BaseController
         try {
             //注册
             $data = $this->params();
-            $data['canalid'] = (int)$data['canalid'] ?? 5000;
+            $data['canalid'] = (int)$data['cid'] ?? 5000;
             $this->register($data);
             return $this->writeJson();
         } catch (\Throwable $e) {

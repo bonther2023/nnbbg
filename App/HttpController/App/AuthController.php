@@ -10,24 +10,24 @@ use EasySwoole\RedisPool\RedisPool;
 class AuthController extends BaseController
 {
 
-    protected $userid = 0;
-
-    public function onRequest(?string $action): ?bool
-    {
-        //判断登录
-        $header = $this->request()->getHeaders();
-        if (isset($header['authorization']) && $header['authorization']) {
-            list ($bearer, $token) = explode(' ', $header['authorization'][0]);
-            if ($token) {
-                $auth = (new JwtToken())->check($token);
-                if ($auth !== false) {
-                    $this->userid = $auth;
-                    $this->online($this->userid);
-                }
-            }
-        }
-        return true;
-    }
+//    protected $userid = 0;
+//
+//    public function onRequest(?string $action): ?bool
+//    {
+//        //判断登录
+//        $header = $this->request()->getHeaders();
+//        if (isset($header['authorization']) && $header['authorization']) {
+//            list ($bearer, $token) = explode(' ', $header['authorization'][0]);
+//            if ($token) {
+//                $auth = (new JwtToken())->check($token);
+//                if ($auth !== false) {
+//                    $this->userid = $auth;
+//                    $this->online($this->userid);
+//                }
+//            }
+//        }
+//        return true;
+//    }
 
     //用户是否是VIP，免费的也算
     protected function vip()

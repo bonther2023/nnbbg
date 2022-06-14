@@ -47,14 +47,11 @@ class OrderController extends AuthController
                 return $this->writeJson(1,null,'请勿重复提交订单');
             }
 
-            //用户信息
-            $user = Users::create()->field('id,username,aid,cid,app_system,code,created_at')->get($this->userid);
-
             //订单基本信息
             $mtype = $this->mtype($data['type']);
-            $old = Carbon::now()->diffInSeconds($user['created_at']) > 86400 ? 2: 1;//注册时间超过24小时算老用户充值
-            $system = $user['app_system'] == 'Android' ? 1 : 2;//1安卓 2IOS
-            $share = $user['code'] ? 2 : 1;
+            $old = 1;//注册时间超过24小时算老用户充值
+            $system = 1;//1安卓 2IOS
+            $share = 1;
             $time = Carbon::now();
             $order = [
                 'number'    => $data['oid'],
@@ -67,10 +64,10 @@ class OrderController extends AuthController
                 'status'    => 1,
                 'type'      => $data['cate'],
                 'system'    => $system,
-                'aid'       => $user['aid'],
-                'cid'       => $user['cid'],
-                'uid'       => $user['id'],
-                'username'  => $user['username'],
+                'aid'       => 0,
+                'cid'       => $data['canalid'],
+                'uid'       => 0,
+                'username'  => '',
                 'settle'    => 1,
                 'old'       => $old,
                 'share'     => $share,
@@ -80,8 +77,8 @@ class OrderController extends AuthController
             if($oid){
                 $this->queueReport([
                     'info' => [
-                        'aid' => $user['aid'],
-                        'cid' => $user['cid'],
+                        'aid' => 0,
+                        'cid' => $data['canalid'],
                         'date' => $time->toDateString(),
                         'hour' => $time->hour,
                     ],

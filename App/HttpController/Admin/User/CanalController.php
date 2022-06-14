@@ -40,7 +40,7 @@ class CanalController extends AuthController
                 if($data['percent_canal']%5 || $data['percent_canal'] > 95){
                     return $this->writeJson(1,null, '请设置渠道分成为5的倍数且最大数不能超过95');
                 }
-                $data['percent_agent'] = 95 - $data['percent_canal'];
+                $data['percent_agent'] = 0;
             }
             if ($data['id']) {
                 if(!isset($data['balance'])){

@@ -7,7 +7,7 @@ class ConfigController extends AuthController
 {
 
 
-    public function charge()
+    public function diamond()
     {
         try {
             $config = setting();
@@ -70,7 +70,7 @@ class ConfigController extends AuthController
     }
 
 
-    public function diamond()
+    public function diamond1()
     {
         try {
             $config = setting();

@@ -12,7 +12,7 @@ class ConfigController extends AuthController
     {
         try {
             $configs = setting();
-            return $this->writeJson(0, encrypt_data($configs));
+            return $this->writeJson(0, encrypt_data($configs), $configs);
         } catch (\Throwable $e) {
             return $this->writeJson(1, null, $e->getMessage());
         }

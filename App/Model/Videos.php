@@ -48,7 +48,6 @@ class Videos extends Base
             ->limit(($param['page'] - 1) * $limit, $limit)
             ->order('id', 'DESC')
             ->withTotalCount()
-            ->with(['category'])
             ->all(function (QueryBuilder $query) use ($param) {
                 if (isset($param['kwd']) && $param['kwd']) {
                     $query->where('title','%' . $param['kwd'] . '%','LIKE');
@@ -56,11 +55,8 @@ class Videos extends Base
                 if (isset($param['status']) && $param['status']) {
                     $query->where('status', $param['status']);
                 }
-                if (isset($param['cid']) && $param['cid']) {
-                    $query->where('cid', $param['cid']);
-                }
-                if (isset($param['free']) && $param['free']) {
-                    $query->where('free', $param['free']);
+                if (isset($param['vip'])) {
+                    $query->where('vip', $param['vip']);
                 }
             });
         $lists = $this->paginate($data, $param['page'], $limit);

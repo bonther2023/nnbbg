@@ -16,8 +16,7 @@ class VideoController extends AuthController
             $param['page'] = (int)$param['page'] ?? 1;
             $param['kwd'] = (string)$param['kwd'] ?? '';
             $param['status'] =(int)$param['status'] ?? 0;
-            $param['cid'] = (int)$param['cid'] ?? 0;
-            $param['free'] = (int)$param['free'] ?? 0;
+            $param['vip'] = (int)$param['vip'] ?? 0;
             $model = Videos::create();
             $lists = $model->list($param);
             return $this->writeJson(0, encrypt_data($lists));

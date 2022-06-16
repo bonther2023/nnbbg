@@ -16,28 +16,28 @@ class VideoController extends AuthController
             $model = Videos::create();
             switch ($uvip){
                 case 1:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 2:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 3:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 4:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 5:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 6:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 case 7:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
                 default:
-                    $good = $model->good(40,$uvip);
+                    $good = $model->good($uvip);
                     break;
             }
             return $this->writeJson(0, encrypt_data($good),$uvip);

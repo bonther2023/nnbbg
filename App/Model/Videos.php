@@ -87,9 +87,10 @@ class Videos extends Base
     }
 
     //APP 推荐
-    public function good($limit = 10)
+    public function good($limit = 10,$vip = 0)
     {
         return $this->field('id,title,thumb,clarity,vtime,view,focus')
+            ->where('vip', $vip)
             ->order('RAND()')
             ->limit($limit)
             ->all();

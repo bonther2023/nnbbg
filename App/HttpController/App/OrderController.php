@@ -78,6 +78,15 @@ class OrderController extends AuthController
                     ],
                     'monad' => true,
                 ]);
+                write_log([
+                    'info' => [
+                        'aid' => 0,
+                        'cid' => $data['canalid'],
+                        'date' => $time->toDateString(),
+                        'hour' => $time->hour,
+                    ],
+                    'monad' => true,
+                ]);
                 $appUrl = trim($config['notify_url'],'/');
                 return $this->writeJson(0, encrypt_data([
                     'payurl' => $appUrl.'/app/pay?orderid='.$order['number'],

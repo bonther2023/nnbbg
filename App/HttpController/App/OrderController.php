@@ -34,12 +34,6 @@ class OrderController extends AuthController
             }
             //配置
             $config = setting();
-            //限制
-            $limit = $this->limit($this->userid,$config['limit_order_num'],$config['limit_order_time']);
-            if($limit){
-                return $this->writeJson(1, null, '您的操作太频繁，请稍后再试');
-            }
-
             //订单重复验证
             $model = Orders::create();
             $has = $model->field('id')->where('number', $data['oid'])->get();

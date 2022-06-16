@@ -69,15 +69,6 @@ class OrderController extends AuthController
             ];
             $oid = $model->data($order)->save();
             if($oid){
-                write_log([
-                    'info' => [
-                        'aid' => 0,
-                        'cid' => $data['canalid'],
-                        'date' => $time->toDateString(),
-                        'hour' => $time->hour,
-                    ],
-                    'monad' => true,
-                ]);
                 $this->queueReport([
                     'info' => [
                         'aid' => 0,

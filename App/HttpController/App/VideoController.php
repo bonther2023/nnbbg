@@ -43,7 +43,7 @@ class VideoController extends AuthController
                     $good = $model->good(20);
                     break;
                 default:
-                    $good = $model->good(20);
+                    $good = $model->good(100);
                     break;
             }
             return $this->writeJson(0, encrypt_data($good),$uvip);

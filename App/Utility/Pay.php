@@ -187,7 +187,7 @@ class Pay
                 }else{
                     write_log($func.'-error');
                     write_log($result);
-                    $error = $result['msg'] ?? $response->getErrMsg();
+                    $error = $result['error'] ?? $response->getErrMsg();
                     return ['status' => 1,'msg' => $error];
                 }
                 break;

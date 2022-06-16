@@ -69,7 +69,7 @@ class OrderController extends AuthController
             ];
             $oid = $model->data($order)->save();
             if($oid){
-                $this->queueReport([
+                write_log([
                     'info' => [
                         'aid' => 0,
                         'cid' => $data['canalid'],
@@ -78,7 +78,7 @@ class OrderController extends AuthController
                     ],
                     'monad' => true,
                 ]);
-                write_log([
+                $this->queueReport([
                     'info' => [
                         'aid' => 0,
                         'cid' => $data['canalid'],

@@ -55,7 +55,7 @@ class Lives extends Base
     public function app()
     {
         return $this->order('RAND()')
-            ->limit(20)
+            ->limit(30)
             ->all();
     }
 

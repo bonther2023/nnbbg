@@ -123,9 +123,9 @@ class IndexController extends AuthController {
         try {
             $target = trim(setting('web_link'),'/');
             $domain = [
-                $target."/j.php?auth=".base64_encode('/hong/lou/index.html?qdid='.$this->userid),
-                $target."/j.php?auth=".base64_encode('/hong/zhi/index.html?qdid='.$this->userid),
-                $target."/j.php?auth=".base64_encode('/hong/you/index.html?qdid='.$this->userid),
+                $target."/o.php?auth=".base64_encode('/hu/lou/index.html?qdid='.$this->userid),
+                $target."/o.php?auth=".base64_encode('/hu/zhi/index.html?qdid='.$this->userid),
+                $target."/o.php?auth=".base64_encode('/hu/you/index.html?qdid='.$this->userid),
             ];
             return $this->writeJson(0, encrypt_data($domain));
         } catch (\Throwable $e) {

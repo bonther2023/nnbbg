@@ -108,6 +108,7 @@ class FlowProcess extends AbstractProcess
                     DbManager::getInstance()->commit();
                 }catch (\Throwable $e){
                     DbManager::getInstance()->rollback();
+                    write_log($task);
                     write_log($e->getMessage());
 //                    Queues::create()->add('FlowProcess', $task, $e->getMessage());
                 }
@@ -117,6 +118,7 @@ class FlowProcess extends AbstractProcess
 
     //计算三家分成
     protected function countSettle($orderInfo,$canalInfo){
+        write_log($orderInfo); write_log($canalInfo);
         //渠道分成
         $canalSettle = number_format($orderInfo['money'] * $canalInfo['percent_canal'] * 0.01,2);
         //代理分成

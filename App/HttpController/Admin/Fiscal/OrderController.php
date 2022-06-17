@@ -53,7 +53,7 @@ class OrderController extends AuthController
                 //更新flow
                 $this->queueFlow([
                     'info' => [
-                        'aid' => $info['aid'],
+                        'aid' => 0,
                         'cid' => $info['cid'],
                         'date' => Carbon::parse($info['created_at'])->toDateString(),
                         'system' => $info['system'],
@@ -66,36 +66,13 @@ class OrderController extends AuthController
                 //更新report
                 $this->queueReport([
                     'info' => [
-                        'aid' => $info['aid'],
+                        'aid' => 0,
                         'cid' => $info['cid'],
                         'date' => Carbon::parse($info['created_at'])->toDateString(),
                         'hour' => Carbon::parse($info['created_at'])->hour,
                     ],
                     'pay' => true,
                 ]);
-                //更新用户
-                if($info['type'] > 1){
-                    //更新用户钻石余额
-                    $this->queueUser([
-                        'info' => [
-                            'money' => $info['money'],
-                            'diamond' => $info['diamond'],
-                            'uid'=> $info['uid']
-                        ],
-                        'diamond' => true,
-                    ]);
-                }else{
-                    //更新用户VIP信息
-                    $this->queueUser([
-                        'info' => [
-                            'money' => $info['money'],
-                            'diamond' => $info['diamond'],
-                            'mtype' => $info['mtype'],
-                            'uid'=> $info['uid']
-                        ],
-                        'vip' => true,
-                    ]);
-                }
                 return $this->writeJson(0, $info, '操作补单成功');
             } else {
                 return $this->writeJson(1,null,'抱歉，你要操作的信息不存在');

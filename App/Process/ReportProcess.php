@@ -54,7 +54,8 @@ class ReportProcess extends AbstractProcess
                     DbManager::getInstance()->commit();
                 }catch (\Throwable $e){
                     DbManager::getInstance()->rollback();
-                    Queues::create()->add('ReportProcess', $task, $e->getMessage());
+                    write_log($e->getMessage());
+//                    Queues::create()->add('ReportProcess', $task, $e->getMessage());
                 }
             });
         });

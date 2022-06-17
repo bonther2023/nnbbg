@@ -28,7 +28,7 @@ class FlowProcess extends AbstractProcess
                     //报表记录
                     $model = Flows::create();
                     $info = $model->where('date',$data['date'])
-                        ->where('aid',$data['aid'])
+//                        ->where('aid',$data['aid'])
                         ->where('cid',$data['cid'])->get();
                     if(!$info){
                         $info = [
@@ -108,7 +108,8 @@ class FlowProcess extends AbstractProcess
                     DbManager::getInstance()->commit();
                 }catch (\Throwable $e){
                     DbManager::getInstance()->rollback();
-                    Queues::create()->add('FlowProcess', $task, $e->getMessage());
+                    write_log($e->getMessage());
+//                    Queues::create()->add('FlowProcess', $task, $e->getMessage());
                 }
             });
         });

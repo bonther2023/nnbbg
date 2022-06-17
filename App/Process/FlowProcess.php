@@ -33,7 +33,7 @@ class FlowProcess extends AbstractProcess
                     if(!$info){
                         $info = [
                             'date' => $data['date'],
-                            'aid' => $data['aid'],
+                            'aid' => 0,
                             'cid' => $data['cid'],
                             'install_ios_settle' => 0,
                             'install_and_settle' => 0,
@@ -52,7 +52,7 @@ class FlowProcess extends AbstractProcess
                         //渠道信息
                         $canalModel = Canals::create();
                         $canalInfo = $canalModel->get($data['cid']);
-
+                        write_log($canalInfo);
                         //计算分成
                         $settle = $this->countSettle($orderInfo,$canalInfo);
                         //更新flow三家分成
@@ -108,8 +108,6 @@ class FlowProcess extends AbstractProcess
                     DbManager::getInstance()->commit();
                 }catch (\Throwable $e){
                     DbManager::getInstance()->rollback();
-                    write_log($task);
-                    write_log($e->getMessage());
 //                    Queues::create()->add('FlowProcess', $task, $e->getMessage());
                 }
             });

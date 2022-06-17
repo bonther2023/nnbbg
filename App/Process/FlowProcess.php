@@ -120,7 +120,7 @@ class FlowProcess extends AbstractProcess
         //渠道分成
         $canalSettle = number_format($orderInfo['money'] * $canalInfo['percent_canal'] * 0.01,2);
         //代理分成
-        $agentSettle = number_format($orderInfo['money'] * $canalInfo['percent_agent'] * 0.01,2);
+        $agentSettle = 0;
         //平台分成
         $adminSettle = $orderInfo['money'] - $agentSettle - $canalSettle;
         //免单内不扣量 num_free  num_order

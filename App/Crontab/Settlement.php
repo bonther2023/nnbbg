@@ -55,15 +55,6 @@ class Settlement extends AbstractCronTask
             //特殊处理下代理结算
             foreach ($agents as $aid => $money){
                 $total = array_sum($money);
-                //生成代理结算队列
-                $this->queue([
-                    'info' => [
-                        'uid' => $aid,
-                        'money' => $total,
-                        'date' => $subDate,
-                    ],
-                    'agent' => true,
-                ]);
             }
         });
     }
